@@ -7,7 +7,7 @@ pd.set_option('display.max_columns', 20)
 pd.set_option('display.max_rows', 100)
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
-## Task 1 analysing and processing dataset
+## Task 1: analysing and processing dataset
 #1 read excel btw 2010-2011 and copy
 df_ = pd.read_excel("datasets/online_retail_II.xlsx",
                     sheet_name="Year 2010-2011")
@@ -44,7 +44,7 @@ df = df[~df["Invoice"].str.contains("C", na=False)]
 #9 Revenue per transaction
 df["TotalRevenue"] = df["Quantity"]*df["Price"]
 
-# Task2: Calculation of RFM metrics
+# Task 2: Calculation of RFM metrics
 
 # Recency: How recently a customer has made a purchase
 # Frequency: How often a customer makes a purchase
@@ -63,7 +63,7 @@ rfm.columns = ["recency", "frequency", "monetary"]
 rfm.head()
 rfm = rfm[rfm["monetary"] > 0]
 
-# Task 4 Calculating RFM scores
+# Task 3: Calculating RFM scores
 
 #recency score
 rfm["recency_score"] = pd.qcut(rfm["recency"], 5, labels = [5,4,3,2,1])
@@ -79,6 +79,7 @@ rfm["monetary_score"] = pd.qcut(rfm["monetary"], 5, labels = [1,2,3,4,5])
 rfm['RFM_SCORE'] = (rfm["recency_score"].astype(str) +
                     rfm["frequency_score"].astype(str))
 
+# Task 4: Identification of segments with RFM scores
 seg_map = {
         r'[1-2][1-2]': 'hibernating',
         r'[1-2][3-4]': 'at_risk',
@@ -103,6 +104,7 @@ rfm.reset_index(inplace=True)
 
 
 # Task 5 Modelling with K-Means
+
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import MinMaxScaler
