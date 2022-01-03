@@ -5,4 +5,6 @@ Project task is segmenting customers with K-Means which is given in the Task 5. 
 - **1. Analysing and preprocessing dataset**
 - **2. Calculation of RFM metrics**
 - **3. Calculating RFM scores**
-- **4. Modelling with K-Means**
+- **4. Identification of segments with RFM scores**
+- **5. Modelling with K-Means**
+- **6. Interpretation of results and policy recommendations**
