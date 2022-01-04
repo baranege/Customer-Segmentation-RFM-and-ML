@@ -8,3 +8,5 @@ Project task is segmenting customers with K-Means which is given in the Task 5. 
 - **4. Identification of segments with RFM scores**
 - **5. Modelling with K-Means**
 - **6. Interpretation of results and policy recommendations**
+
+### Dataset: https://archive.ics.uci.edu/ml/datasets/Online+Retail+II
